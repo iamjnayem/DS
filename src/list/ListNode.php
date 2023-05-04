@@ -1,6 +1,5 @@
 <?php
-// namespace DS\List\ListNode;
-
+namespace DS\List;
 class ListNode{
     public $data = null;
     public $next = null;

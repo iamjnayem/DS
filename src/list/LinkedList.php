@@ -1,7 +1,7 @@
 <?php 
-// namespace DS\List\LinkedList;
+namespace DS\List;
 
-// use DS\List\ListNode;
+use DS\List\ListNode;
 require '../list/ListNode.php';
 
 class LinkedList{
@@ -14,7 +14,21 @@ class LinkedList{
 
         if($this->_firstNode === NULL){
             $this->_firstNode = &$newNode;
-            // echo $this->_firstNode;
+        }else{
+            $currentNode = $this->_firstNode;
+            while($currentNode->next){
+                $currentNode = $currentNode->next;
+            }
+
+            $currentNode->next = &$newNode;
+        }
+    }
+
+    public function displayList(){
+        $currentNode = $this->_firstNode;
+        while($currentNode){
+            echo $currentNode->data . "\n";
+            $currentNode= $currentNode->next;
         }
     }
 
@@ -22,3 +36,6 @@ class LinkedList{
 
 $l = new LinkedList();
 $l->insert(10);
+$l->insert(10);
+$l->insert(10);
+$l->displayList();
