@@ -15,3 +15,5 @@ for($i = 0; $i < $items; $i++){
 }
 $end_memory = memory_get_usage();
 echo ($end_memory - $start_memory)/(1024 * 1024) . " MB\n";
+
+
